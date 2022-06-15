@@ -1,0 +1,27 @@
+<app-home></app-home>
+
+<div class="container-fluid">
+<div class="col-12">
+    <div class="card text.light ">
+                  <div class="card-header bg-warning" >
+  
+  <h1><strong>modifier Produit</strong></h1>
+
+  </div>
+                  <div class="card-body">
+<div class="group-control">
+    <label>Titre</label>
+    <input type="text" [(ngModel)]="produit.titre" [ngModelOptions]="{standalone: true}"  class="form-control">
+</div>
+<div class="group-control">
+    <label>Prix</label>
+    <input type="text"   [(ngModel)]="produit.prix" [ngModelOptions]="{standalone: true}" class="form-control">
+</div>
+<div class="group-control">
+    <label>Image</label>
+    <input type="file" [(ngModel)]="produit.image" [ngModelOptions]="{standalone: true}" #image1 accept="image/*" class="form-control">
+</div>
+<button class="btn btn-info" (click)="update()" routerLink="/liste" >Enregistrer</button>
+</div>
+
+</div>

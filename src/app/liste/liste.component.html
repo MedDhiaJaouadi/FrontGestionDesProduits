@@ -1,0 +1,47 @@
+<app-home></app-home>
+<div class="container-fluid">
+    <div class="col-12 mt-2 mb-2">
+      <div class="card card-header  ">
+
+<div class="text-warning"><h3 ><strong>Liste des produits</strong> 
+</h3> </div>
+
+<input  type="text" name="search"  
+                [(ngModel)]="titre"  placeholder=" Titre du produit" 
+                   aria-label="Search" >&nbsp;&nbsp;
+                   <button class="btn btn-warning" (click)=" gettitre()" ><strong>chercher</strong> </button>
+
+            <div class="row mt-4">
+                <div class="col-4" *ngFor="let item of produits">
+                  <div class="card bg-light" style="width: 18rem;">
+                    <img src="data:image/png;base64,{{item.image}}" style="width:100%;" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-title"><strong> Produit:</strong> {{item.titre}} </p>
+                        <p class="card-text"><strong> Prix:</strong> {{item.prix}} Dt</p>
+                        <p class="card-text"> <strong> Id:</strong> {{item.id}}</p>
+
+                        <a routerLink="/detail/{{item.id}}" class="card-link btn btn-success">Detail</a><br>
+                        <a (click)="update(item)" class="card-link btn btn-warning">modifier</a><br>
+                        <a (click)="deleteProduit(item.id)" class="card-link btn btn-danger">delete</a><br>
+                      
+                    </div>
+                </div>
+                </div>
+    <!--
+        <td>{{p.id}}</td>
+        <td><img src="data:image/png;base64,{{p.image}}" width="30%"></td>
+        <td>{{p.titre}}</td>
+        <td>{{p.prix}}</td>
+       <td><button class="btn btn-primary" routerLink="/detail/{{p.id}}">Detail</button></td> 
+       <td><button class="btn btn-warning" (click)="update(p)" routerLink="">modifier</button></td> 
+    
+       <td><button class="btn btn-danger" (click)="deleteProduit('p')">delete</button></td> 
+
+ 
+        </tr>
+    </tbody>
+</table>
+-->
+</div>
+</div>
+</div>

@@ -1,0 +1,50 @@
+<app-home></app-home>
+
+<ng-container >
+    <div class="container">
+        <div class="card-table">
+            <div class="cart-product">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Titre</th>
+                            <th>Prix</th>
+                            <th>Image</th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let p of products ;let index = index">
+                            <td>{{p.id}}
+                                
+                            </td>
+                            <td>{{p.titre}}</td>
+                            <td>{{p.prix}}</td>
+                            <td>
+                                <img src="data:image/png;base64,{{p.image}}" style="width:100%;" class="card-img-top" alt="...">
+                                
+                            </td>
+
+                            
+                            <td>
+                                <button (click)="removeItem(index)" class="btn btn-danger">
+                                    <span uk-icon="trash"></span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td><button (click)="emptycart()" class="btn btn-danger">Empty Cart</button></td>
+                            <td><button routerLink="/liste" class="btn btn-primary">Shop More</button></td>
+                            <td><button class="btn btn-success">Checkout</button></td>
+                            <td><strong>Grand Total : ${{grandTotal}}</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+
